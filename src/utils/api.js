@@ -17,15 +17,15 @@ export const registerUserConfig = ({
 })
 
 export const changePassConfig = ({
-    url: `${BASE_URL}/userinfo`,
-    method: 'POST',
+    url: `${BASE_URL}/auth/resetpassword`,
+    method: 'GET',
     headers: {
         'Content-Type': 'application/json'
     },
 })
 
 export const resetPassConfig = ({
-    url: `${BASE_URL}/userinfo`,
+    url: `${BASE_URL}/auth/resetpassword/`,
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'

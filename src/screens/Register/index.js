@@ -2,9 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form";
 import useAxios from 'axios-hooks';
+import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import { registerUserConfig } from '../../utils/api';
 import { setLoading } from '../../redux/slices/sessionSlice';
 import './styles.css'

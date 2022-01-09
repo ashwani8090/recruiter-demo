@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import ProtectedRoutes from './protected';
 import PublicRoute from './publicRoute';
 import PrivateRoute from './privateRoute';
-import { Login, SignUp } from '../screens';
+import { Login, SignUp, ForgotPassword, ResetPassPassword } from '../screens';
 
 const Routes = () => {
     const accessToken = useSelector((state) => state?.persistedSlice?.accessToken)
@@ -33,6 +33,20 @@ const Routes = () => {
                     isAuthenticated={isAuthenticated}
                 >
                     <SignUp />
+                </PublicRoute>
+
+                <PublicRoute
+                    path="/forgot"
+                    isAuthenticated={isAuthenticated}
+                >
+                    <ForgotPassword />
+                </PublicRoute>
+
+                <PublicRoute
+                    path="/reset"
+                    isAuthenticated={isAuthenticated}
+                >
+                    <ResetPassPassword />
                 </PublicRoute>
 
                 <PrivateRoute

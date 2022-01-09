@@ -66,9 +66,11 @@ const Login = () => {
                             {errors.email?.type === 'required' && "Field is required"}
                         </span>
                     </div>
-
                     <div className="input-container">
-                        <label>Password</label>
+                        <div style={{ marginBottom: 8, display: 'flex', justifyContent: "space-between", width: '100%' }}>
+                            <label>Password</label>
+                            <Link style={{ color: '#43AFFF', marginInlineStart: 10, fontSize: 14 }} to="/forgot">Forgot Password</Link>
+                        </div>
                         <input placeholder="Enter your password" className="input" {...register("password", { required: true })} />
                         <span className="error">
                             {errors.password?.type === 'required' && "Field is required"}
