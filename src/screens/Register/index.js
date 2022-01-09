@@ -59,9 +59,17 @@ const SignUp = () => {
 
                     <div className="register-input-container">
                         <label>Email Address</label>
-                        <input placeholder="Email" className="register-input" {...register("email", { required: true })} />
+                        <input placeholder="Email" className="register-input"
+                            {...register("email", {
+                                required: true,
+                                pattern: {
+                                    value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
+                                    message: 'Invalid email address.'
+                                }
+                            })} />
                         <span className="error">
-                            {errors.name?.type === 'required' && "Field is required"}
+                            {errors.email?.type === 'required' && "Field is required"}
+                            {errors.email?.message}
                         </span>
                     </div>
                     <div style={{ width: "100%", display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
