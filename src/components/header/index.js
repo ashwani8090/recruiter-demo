@@ -7,7 +7,7 @@ import './styles.css';
 import Popover from '@mui/material/Popover';
 
 const Avtaar = ({ user }) => {
-  return (<div className='avtaar' >{user?.name[0]}</div>)
+  return (<div className='avtaar' >{user?.name?.[0]}</div>)
 }
 
 const Header = () => {
