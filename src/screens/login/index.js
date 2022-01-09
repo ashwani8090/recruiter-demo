@@ -58,28 +58,29 @@ const Login = () => {
             <div className="container">
                 <form onChange={() => setLoginError(null)} style={{ display: "flex", flexDirection: 'column', alignItems: 'start', width: '100%', justifyContent: 'space-evenly' }}
                     onSubmit={handleSubmit(onSubmit)}>
-                    <div>LOGIN</div>
+                    <div className="login-title">LOGIN</div>
                     <div className="input-container">
                         <label>Email address</label>
                         <input placeholder="Enter your email" className="input" {...register("email", { required: true })} />
+                        <span className="error">
+                            {errors.email?.type === 'required' && "Field is required"}
+                        </span>
                     </div>
-                    {errors.email?.type === 'required' && "Field is required"}
+
                     <div className="input-container">
                         <label>Password</label>
                         <input placeholder="Enter your password" className="input" {...register("password", { required: true })} />
+                        <span className="error">
+                            {errors.password?.type === 'required' && "Field is required"}
+                        </span>
                     </div>
-                    {errors.password?.type === 'required' && "Field is required"}
+
                     <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                         <button
                             className="button"
                             type="submit">Login</button>
                     </div>
-                    {
-
-                        loginError ?
-                            <div style={{ fontSize: 12, margin: 10, color: 'red' }}>{loginError}</div>
-                            : <></>
-                    }
+                    <span className="error">{loginError}</span>
                     <div style={{ width: '100%' }}>New to MyJobs?
                         <Link style={{ color: '#43AFFF', marginInlineStart: 10 }} to="/register">Create an account</Link>
                     </div>

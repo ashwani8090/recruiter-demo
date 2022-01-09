@@ -12,10 +12,10 @@ const List = ({ listData = [], count = 0, handlePageChange = () => { } }) => {
                 return (<Card
                     className="card"
                     key={index}
-                    sx={{ width: 260, maxWidth: 260, height: 162, marginBottom: 1, marginTop: 1 }} >
-                    <div style={{ overflow: 'hidden', minHeight: 100 }}>
-                        <div>{item?.title}</div>
-                        <div className='content'>{item?.description}</div>
+                    sx={{ width: 260, maxWidth: 260, height: 162, margin: 1 }} >
+                    <div style={{ overflow: 'hidden', minHeight: 100, maxWidth: 250 }}>
+                        <div className='card-title'>{item?.title}</div>
+                        <div className='content card-subtitle'>{item?.description}</div>
                     </div>
                     <div style={{ display: 'flex', alignItems: "center" }}>
                         <LocationOnOutlinedIcon />
