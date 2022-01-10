@@ -38,7 +38,8 @@ const Header = () => {
         <span style={{ color: '#ffffff' }}>My</span>
         <span style={{ color: '#43AFFF' }}>Jobs</span>
       </div>
-      {userDetails ? <div style={{ display: 'flex', alignItems: 'center', width: 70, justifyContent: 'space-between' }}>
+      {userDetails?.name ? 
+      <div style={{ display: 'flex', alignItems: 'center', width: 70, justifyContent: 'space-between' }}>
         <Avtaar user={userDetails} />
         <CaretDownFilled style={{color:'#ffffff'}} onClick={handleClick} />
         <Popover
