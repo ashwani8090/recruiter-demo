@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
 import ProtectedRoutes from './protected';
@@ -19,7 +19,6 @@ const Routes = () => {
     }, [accessToken])
 
     return (
-        <Router>
             <Switch>
                 <PublicRoute
                     path="/login"
@@ -56,7 +55,6 @@ const Routes = () => {
                     <ProtectedRoutes />
                 </PrivateRoute>
             </Switch>
-        </Router>
     );
 };
 
